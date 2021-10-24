@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/database');
 
-Category = require('../models/Category.js');
-
 // MANAGE - GET
 router.get('/', (req, res, next) =>{
     res.render('manage', {title: `Panel d'administration`});
