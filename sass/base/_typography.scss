@@ -1,0 +1,85 @@
+%heading {
+    font-family: $font-primary;
+    font-weight: 400;
+}
+
+.heading-1 {
+    @extend %heading;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 11rem;
+    line-height: 1;
+    @include respond(phone){
+        font-size: 7rem;
+    }
+}
+
+.heading-2 {
+    @extend %heading;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 7rem;
+    line-height: 1;
+}
+
+
+.heading-2-light {
+    @extend %heading;
+    color: #FFF;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 7rem;
+    line-height: 1;
+
+    @include respond(phone-tab-port){
+        font-size: 5.5rem;
+        text-align: center;
+    }
+
+    @include respond(phone){
+        font-size: 5rem;
+    }
+}
+
+.heading-3 {
+    @extend %heading;
+    color: $color-primary-light;
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: 5.3rem;
+    line-height: 1;
+}
+
+.heading-4 {
+    color: #b053c0;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.btn {
+    background-color: $color-primary-light;
+    font-family: $font-primary;
+    padding: 1.5rem 2rem;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    font-size: 1.7rem;
+    font-weight: 300;
+    cursor: pointer;
+
+    transition: all .2s;
+    &:hover{
+        background-color: $color-primary-light;
+    }
+
+    @include respond(phone){
+        padding: 1.3rem 1.8rem;
+    }
+}
+
+
+.mb-sm { margin-bottom: 2rem; }
+.mb-md { margin-bottom: 3rem; }
+.mb-lg { margin-bottom: 4rem; }
+.mb-hg { margin-bottom: 8rem; }

@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        title Panel d'administration
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/css/style.css")
+        script.
+            window.onbeforeunload = function() {
+            return 'Tout changement sera perdu';
+            };
+
+    body
+        block content
+        div(class="manage__container")
+            h1(class="manage__title") #{title} 
+            div(class="manage__article__add-content")
+
+                form(method='post', action=`/articles/edit/${article.id}` class="manage__article__add-form" enctype="multipart/form-data")
+                    .form-group
+                        label(class="manage__article__add-label") Titre
+                        input.form-control(name='titre', type='text' class="manage__article__add-title" value=`${article.titre}` minlength="1" required)
+                    .form-group
+                        label(class="manage__article__add-label") Auteur
+                        input.form-control(name='auteur', type='text' class="manage__article__add-author" value=`${article.auteur}` minlength="1" required)
+                    .form-group
+                        label(class="manage__article__add-label") Contenu de l'article
+                        textarea.form-control(name='contenu' class="manage__article__add-text" minlength="1" required)= `${article.contenu}`
+                    img(src=`${article.lien}`)
+                    .form-group
+                        label(class="manage__article__add-label") Image de présentation
+                        p Largeur minimum conseillée de l'image : 1920px <br > Si aucune image n'est choisie, l'image actuelle sera conservée.
+                        input.form-control(type='file' name='image' class="manage__article__add-upload" accept=".jpeg, .jpg, .png")
+                    input.manage__article__add-submit(type='submit', name='submit', value='Envoyer' class='manage__article__add-submit')
+
+                div(class="manage__menu")
+                    a(href="/" class="btn manage__btn") Accueil
+                    a(href="/manage/articles" class="btn manage__btn") Retour

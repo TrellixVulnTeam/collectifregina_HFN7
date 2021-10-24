@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        title Panel d'administration
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        block content
+        div(class="manage__container")
+            h1(class="manage__title") #{title}
+            p(class="manage__text") Choisissez une catégorie à modifier :
+            
+            div(class="manage__content")
+                a(href="/manage/evenements" class="manage__link") - Évènements
+                a(href="/manage/articles" class="manage__link") - Articles
+                a(href="/manage/galerie" class="manage__link") - Galerie
+                a(href="/manage/header" class="manage__link") - Fond d'écran d'accueil
+
+            div(class="manage__menu")
+                a(href="/" class="btn manage__btn") Accueil

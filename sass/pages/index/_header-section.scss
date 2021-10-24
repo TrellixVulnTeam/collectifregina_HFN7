@@ -1,0 +1,74 @@
+.header {
+    grid-column: full-start / full-end;
+            background-image: linear-gradient(rgba($color-primary, .07), rgba($color-primary, .07)), url(../img/index/header.jpg);
+
+            @media (max-width: 62.5em) {
+                background-image: url(../img/index/header-small.jpg); 
+            };
+
+            @media (min-resolution: 192dpi) and (min-width: 62.5em) {
+                background-image: url(../img/index/header-2x.jpg); 
+            };
+
+            @media (min-resolution: 192dpi) and (max-width: 62.5em) {
+                background-image: url(../img/index/header-small-2x.jpg); 
+            };
+            
+            background-size: cover;
+            background-position: top;
+            display: grid;
+            grid-template-rows: 11.5rem calc(100vh - 11.5rem);   
+            grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(10, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: rgba(0, 0, 0, .08);
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__title-box {
+        grid-column: 2 / 6;
+        grid-row: 2 / 3;
+        justify-self: center;
+        align-self: center;
+        margin-top: -6rem;
+    }
+
+    &__title-1 {
+        color: $color-secondary-dark-2;
+    }
+
+    &__title-2 {
+        color: #a645b9;
+    }
+
+    @include respond(tab-port-land){
+        &__title-box {
+            grid-column: 2 / 8;
+        }
+    }
+
+    @include respond(phone-tab-port){
+        &__title-box {
+            grid-column: 2 / 10;
+        }
+    }
+
+    @include respond(phone){
+        &__title-box {
+            grid-column: 2 / 12;
+        }
+    }
+}

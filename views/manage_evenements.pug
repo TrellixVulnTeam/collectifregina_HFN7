@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        title Panel d'administration
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/css/style.css")
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="/js/manage.js" defer)
+    body
+        block content
+        div(class="manage__container")
+            h1(class="manage__title") #{title}
+            
+            div(class="manage__content")
+                each evenement in evenements
+                    div(class="manage__row")
+                        a(href="/evenements" class="manage__link")= `• ${evenement.titre}`
+                        a(class="manage__btn-edit" href=`/manage/evenements/edit/${evenement.id}`) Éditer
+                        a(class="manage__btn-delete evenement-delete" href='/manage/evenements' data-evenement-id=`${evenement.id}`) Supprimer
+
+                a(class="manage__btn-new" href='/manage/evenements/add') Nouvel évènement
+
+            div(class="manage__menu")
+                a(href="/" class="btn manage__btn") Accueil
+                a(href="/manage" class="btn manage__btn") Retour

@@ -1,0 +1,274 @@
+.evenements-section {
+    grid-column: center-start / center-end;
+
+    display: grid;
+    grid-template: repeat(7, 7rem) / repeat(8, 1fr);
+    grid-gap: 2.5rem;
+    padding: 1.5rem;
+
+    @include respond(tab-port-land){
+        grid-column: full-start / full-end;
+    }
+
+    
+
+        &__text{
+            color: #FFF;
+            font-size: 2.2rem;
+            text-align: center;
+        }
+
+    &__background {
+        grid-row: 1 / 6;
+        grid-column: 1 / 9;
+        background-image: linear-gradient(rgba($color-primary, .23), rgba($color-primary, .23)), url(../img/index/evenements.jpg);
+
+        @media (max-width: 62.5em) {
+            background-image: linear-gradient(rgba($color-primary, .23), rgba($color-primary, .23)), url(../img/index/evenements-small.jpg); 
+        };
+
+        @media (min-resolution: 192dpi) and (min-width: 62.5em) {
+            background-image: linear-gradient(rgba($color-primary, .23), rgba($color-primary, .23)), url(../img/index/evenements-2x.jpg); 
+        };
+
+        @media (min-resolution: 192dpi) and (max-width: 62.5em) {
+            background-image: linear-gradient(rgba($color-primary, .23), rgba($color-primary, .23)), url(../img/index/evenements-small-2x.jpg); 
+        };
+
+        background-color: black;
+        background-size: cover;
+        padding: 4vw 2rem;
+
+        display: grid;
+        grid-template-rows: repeat(2, min-content) 8rem;
+        align-content: start;
+        justify-items: center;
+
+    }
+
+    &__line {
+        position: relative;
+        width: 10rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            background-color: $color-secondary-dark-2;
+            height: 1.7rem;
+            width: 80%;
+        }
+        // @include respond(tab-land) { 
+        //     display: none;
+        // }
+    }
+
+    &__item {
+        margin-bottom: -4rem;
+        margin-top: 2rem;
+        grid-row: 4 / 6;
+        z-index: 7;
+    }
+    &__item-1 {
+        grid-column: 2 / 4;
+    }
+
+    &__item-2 {
+        grid-column: 4 / 6;
+    }
+
+    &__item-3 {
+        grid-column: 6 / 8;
+    }
+
+    &__img {
+        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+    }
+
+    &__card {
+        grid-row: 6 / 8;
+        display: grid;
+        margin-top: 3rem;
+        grid-template-rows: repeat(3, min-content);
+        grid-gap: 0.4rem;
+        &-1 {
+            grid-column: 2 / 4;
+        }
+
+        &-2 {
+            grid-column: 4 / 6;
+        }
+
+        &-3 {
+            grid-column: 6 / 8;
+        }
+
+        &-title {
+            color: $color-primary-light;
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+
+        &-text {
+            color: rgb(102, 102, 102);
+            font-size: 1.3rem;
+            line-height: 1.6rem;
+        }
+
+        &-more {
+            justify-self: start;
+            padding: 0.3rem 0;
+            color: $color-primary-light-2;
+            text-decoration: none;
+            font-size: 1.4rem;
+            border-bottom: 1px solid;
+            border-color: $color-primary-light-4;
+        }
+    }
+
+    &__date {
+        grid-row: 5 / 6;
+        margin-top: 2rem;
+        margin-bottom: -2rem;
+        z-index: 12;
+        background-color: rgba(255, 255, 255, .6);
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+
+        &-1 {
+            grid-column: 3 / 4;
+        }
+
+        &-2 {
+            grid-column: 5 / 6;
+        }
+
+        &-3 {
+            grid-column: 7 / 8;
+        }
+        
+        &-nombre {
+            color: #000;
+            font-size: 3.3rem;
+            padding: 0;
+            align-self: center;
+            margin-top: -0.5rem;
+        }
+
+        &-mois {
+            font-size: 1.1rem;
+            margin-top: -1rem;
+            text-transform: uppercase;
+        }
+
+        
+    }
+    @include respond(phone-tab-port){
+        padding: 0;
+        grid-template: repeat(6, 7rem) / repeat(9, 1fr);
+
+        &__text {
+            font-size: 1.9rem;
+        }
+
+        &__background {
+            grid-row: 1 / 4;
+            grid-column: 1 / -1;
+        }
+
+        &__card {
+
+            &-1 {
+                grid-column: 1 / 4;
+                margin-left: 2rem;
+            }
+    
+            &-2 {
+                grid-column: 4 / 7;
+            }
+    
+            &-3 {
+                grid-column: 7 / 10;
+                margin-right: 2rem;
+            }
+        }
+
+        &__date {
+            margin-top: -2rem;
+            margin-bottom: 2rem;
+            margin-left: -3rem;
+            &-1 {
+                grid-column: 3 / 4;
+            }
+    
+            &-2 {
+                grid-column: 6 / 7;
+            }
+    
+            &-3 {
+                grid-column: 9 / 10;
+                margin-left: -5rem;
+                margin-right: 2rem;
+            }
+        }
+
+        &__item {
+            margin: 0;
+        }
+
+        &__item-1 {
+            grid-column: 1 / 4;
+            margin-left: 2rem;
+        }
+    
+        &__item-2 {
+            grid-column: 4 / 7;
+        }
+    
+        &__item-3 {
+            grid-column: 7 / 10;
+            margin-right: 2rem;
+        }
+
+        &__card {
+            margin-top: 0;
+        }
+    }
+
+    @include respond(phone){
+        &__item {
+            &-1 {
+                margin-left : 0;
+            }
+
+            &-3 {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @include respond(phone-small){
+        &__date {
+            margin-left: -5rem;
+
+            &-3 {
+                margin-left: -5rem;
+                margin-right: 0;
+            }
+        }
+
+        &__background {
+            padding: 4rem 2rem;
+        }
+
+        &__card {
+            &-more {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}

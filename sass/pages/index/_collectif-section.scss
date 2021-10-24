@@ -1,0 +1,69 @@
+.collectif-section {
+
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template: repeat(8, 6.8rem) / repeat(12, 1fr);
+    padding: 1.5rem;
+
+    &__landing {
+        position: relative;
+        grid-row: 1 / 7;
+        grid-column: 1 / 11;
+
+        background-color: rgba(255, 255, 255, 0.842);
+        z-index: 5;
+    }
+    
+    &__content {
+        grid-row: 1 / 7;
+        grid-column: 1 / 6;
+        padding: 6rem 2.3rem 6rem 7rem;
+
+        z-index: 6;
+        display: grid;
+        align-content: center;
+        justify-items: start;
+
+        &-text {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__img {
+        grid-row: 2 / 8;
+        grid-column: 6 / 13;
+        z-index: 7;
+        img {
+            box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &__btn {
+        background-color: $color-primary-light;
+    }
+
+    @include respond(tab-port-land){
+        grid-column: full-start / full-end;
+    }
+
+    @include respond(phone-tab-port){
+        padding: 0;
+        grid-template-rows: repeat(4, min-content) repeat(4, 6.8rem);
+
+        &__landing {
+            grid-column: 1 / 13;
+            grid-row: 1 / 5;
+        }
+
+        &__content {
+            grid-column: 1 / 13;
+            grid-row : 1 / 5;
+            padding: 4.5rem 7rem;
+        }
+
+        &__img {
+            grid-column : 1 / 13;
+            grid-row: 5 / 9;
+        }
+    }
+}

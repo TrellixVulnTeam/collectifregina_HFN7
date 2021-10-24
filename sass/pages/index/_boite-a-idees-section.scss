@@ -1,0 +1,107 @@
+.boite-a-idees {
+    margin-top: 4rem;
+    grid-column: center-start / center-end;
+    
+    display: grid;
+    grid-template: repeat(8, min-content) / repeat(3, 1fr) repeat(5, min-content) repeat(3, 1fr);
+    margin-bottom: 10rem;
+    
+
+    &__container {
+        grid-column: 4 / 9;
+        grid-row: 1 / 8;
+        background-color: rgba(255, 255, 255, 0.842);
+        padding: 6rem 6rem;
+        width: 55rem;
+
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        position: relative;
+    }
+
+    &__content {
+        grid-column: 1 / 5;
+        grid-row: 1 / 5;
+        justify-self: start;
+
+        display: grid;
+        grid-gap: 2rem;
+    }
+    
+    &__title {
+        font-size: 5rem;
+        color: $color-primary-light-4;
+        font-family: $font-primary;
+        font-weight: 300;
+        justify-self: center;
+    }
+
+    &__text {
+        font-size: 1.7rem;
+        color: #5e5c5c;
+        text-align: center;
+    }
+
+    &__btn {
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+    }
+
+    @include respond(phone-big){
+        &__container {
+            width: 70vw;
+            padding: 4.5rem 4rem;
+        }
+
+        &__title {
+            font-size: 4rem;
+            text-align: center;
+        }
+    }
+
+    @include respond(phone-small){
+        grid-column: full-start / full-end;
+        grid-template-columns: repeat(5, min-content);
+
+        &__container {
+            width: 100%;
+        }
+    }
+}
+
+.form {
+    &__input {
+        font-size: 1.5rem;
+        color: #3d3c3c;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.842);
+        border: none;
+        border: 2px solid #e7e7e7;
+        width: 100%;
+        display: block;
+        transition: all .3s;
+    }
+
+    &__textarea {
+        color: #6d6d6d;
+        width: 100%;
+        height: 13rem;
+        padding: 1.5rem 2rem;
+        background-color: rgba(255, 255, 255, 0.842);
+        border: none;
+        border: 2px solid #e7e7e7;
+        resize: none;
+        margin-bottom: 2rem;
+    }
+
+    &__group {
+        margin-bottom: 2rem;
+    }
+
+    &__label {
+        font-size: 1.5rem;
+        display: block;
+    }
+}

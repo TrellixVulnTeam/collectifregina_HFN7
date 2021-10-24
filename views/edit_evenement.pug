@@ -1,0 +1,41 @@
+doctype html
+html
+    head
+        title Panel d'administration
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/css/style.css")
+        script.
+            window.onbeforeunload = function() {
+            return 'Your changes will be lost!';
+            };
+
+    body
+        block content
+        div(class="manage__container")
+            h1(class="manage__title") #{title} 
+            div(class="manage__article__add-content")
+
+                form(method='post', action=`/evenements/edit/${evenement.id}` class="manage__article__add-form" enctype="multipart/form-data")
+                    .form-group
+                        label(class="manage__article__add-label") Titre
+                        input.form-control(name='titre', type='text' class="manage__article__add-title" minlength="1" required value=`${evenement.titre}`)
+                    .form-group
+                        label(class="manage__article__add-label") Lien vers la billetterie
+                        input.form-control(name='ticket', type='text' class="manage__article__add-ticket" minlength="1" value=`${evenement.ticket}`)
+                    .form-group
+                        label(class="manage__article__add-label") Date et heure
+                        input.form-control(name='date', type='date' class="manage__article__add-date" minlength="1" required value=`${evenement.date}`)
+                        input.form-control(name='heure', type='time' class="manage__article__add-heure" minlength="1" required value=`${evenement.heure}`)
+                    .form-group
+                        label(class="manage__article__add-label") Description
+                        textarea.form-control(name='description' class="manage__article__add-description" minlength="1" required)= `${evenement.description}`
+                    img(src=`${evenement.lien}`)
+                    .form-group
+                        label(class="manage__article__add-label") Image de présentation
+                        p Largeur minimum conseillée de l'image : 1000px <br > Si aucune image n'est choisie, l'image actuelle sera conservée.
+                        input.form-control(type='file' name='image' class="manage__article__add-upload" accept=".jpeg, .jpg, .png")
+                    input.manage__article__add-submit(type='submit', name='submit', value='Envoyer' class='manage__article__add-submit')
+
+                div(class="manage__menu")
+                    a(href="/" class="btn manage__btn") Accueil
+                    a(href="/manage/evenements" class="btn manage__btn") Retour

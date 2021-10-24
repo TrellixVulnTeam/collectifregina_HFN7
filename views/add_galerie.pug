@@ -1,0 +1,30 @@
+doctype html
+html
+    head
+        title Panel d'administration
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/css/style.css")
+        script.
+            window.onbeforeunload = function() {
+            return 'Your changes will be lost!';
+            };
+
+    body
+        block content
+        div(class="manage__container")
+            h1(class="manage__title") #{title} 
+            div(class="manage__article__add-content")
+
+                form(method='post', action='/galerie/add' class="manage__article__add-form" enctype="multipart/form-data")
+                    .form-group
+                        label(class="manage__article__add-label") Choisissez une photo à ajouter :
+                        p Largeur minimum conseillée de l'image : 2000px
+                        input.form-control(type='file' name='image' class="manage__article__add-upload" accept=".jpeg, .jpg, .png" required)
+                    .form-group
+                        label(class="manage__article__add-label") Ajouter un commentaire :
+                        input.form-control(name='commentaire', type='text' class="manage__article__add-title" minlength="1")
+                    input.manage__article__add-submit(type='submit', name='submit', value='Envoyer' class='manage__article__add-submit')
+
+                div(class="manage__menu")
+                    a(href="/" class="btn manage__btn") Accueil
+                    a(href="/manage/galerie" class="btn manage__btn") Retour

@@ -1,0 +1,94 @@
+// COLOR VARIABLES
+$color-primary: #600074; // typo
+$color-primary-dark-1:  #700086; // typo
+$color-primary-dark: #570268; // typo
+$color-primary-light: #9f14bb; // typo
+$color-primary-light-2: #7e0596; // typo
+$color-primary-light-3: #8a04a5; // typo
+$color-primary-light-4: #b75cc7; // typo
+
+$color-secondary: #F5B920; // bordures
+$color-secondary-light: #FDF2E9; // fond
+$color-secondary-light-2: #f89165;
+$color-secondary-dark: #e96329;
+$color-secondary-dark-2: #f88350;
+$color-secondary-dark-3: #ec672e;
+$color-secondary-dark-4: #e44e0d;
+
+$color-grey-light-1: #faf0e7;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+// TYPO 
+$font-primary: 'Archivo Narrow', sans-serif; // sous-titre et onglets
+$font-secondary : 'Yellowtail', cursive; // titre 
+$font-tertiary: 'Fira Sans Condensed', sans-serif;
+$font-text : 'Lato', sans-serif; // texte
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+    @include respond(tab-land) { // width < 1200 ?
+        font-size: 56.25%; // 1 rem = 9px, 9/16 = 56.25%
+    }
+
+    @include respond(big-desktop) { // width > 1800 ?
+        font-size: 65%; // 1 rem = 12px, 12/16 = 75%
+    }
+
+}
+
+body {
+    color: $color-primary-dark-1;
+    background-color: #fdf2e8; 
+    font-weight: 200;
+    line-height: 1.6;
+    font-family: $font-text;
+    overflow-x: hidden;
+}
+
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;  
+}
+
+
+.container {
+    display: grid;
+    grid-template-rows: 100vh (7, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(10, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    grid-gap: 6rem;
+
+    @include respond(phone-tab-port) {
+        grid-column-gap: 0rem;
+    } 
+
+    @media only screen and (min-width: 87.5em) {
+        grid-template-columns: [full-start] 15rem [center-start] repeat(10, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] 15rem [full-end];
+    }
+}
+
+.page-template {
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(10, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    grid-template-rows : 11.5rem repeat(2, min-content);
+    display: grid;
+    grid-gap: 2rem;
+
+    @include respond(phone-small){
+        grid-gap: 0;
+    }
+}

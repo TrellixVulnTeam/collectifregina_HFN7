@@ -1,0 +1,24 @@
+@import 'base/mixins';
+@import 'base/base';
+@import 'base/typography';
+
+@import 'layout/nav';
+@import 'layout/footer';
+
+@import 'pages/index/header-section';
+@import 'pages/index/collectif-section';
+@import 'pages/index/evenements-section';
+@import 'pages/index/articles-section';
+@import 'pages/index/galerie-section';
+@import 'pages/index/studioJK-section';
+@import 'pages/index/boite-a-idees-section';
+
+@import 'pages/le-collectif';
+@import 'pages/evenements';
+@import 'pages/articles';
+@import 'pages/article';
+@import 'pages/galerie';
+@import 'pages/studio-JK';
+@import 'pages/contact';
+
+@import 'pages/manage/manage';

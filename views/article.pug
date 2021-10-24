@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script defer src="/js/script.js"></script>
+
+        <title>Collectif Regina</title>
+    </head>
+    <body class="evenements page-template">
+        <div class="nav">
+            <a class="nav__link" href="/">
+                <div class="nav__box">
+                    <img class="nav__logo" src="/img/logo.png">
+                    <p class="nav__title nav__title-purple-1">Collectif Régina</p>
+                </div>
+            </a>
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="/le-collectif" class="nav__link nav__link-purple">Le collectif</a></li>
+                <li class="nav__item"><a href="/evenements" class="nav__link nav__link-purple">Évènements</a></li>
+                <li class="nav__item"><a href="/articles" class="nav__link nav__link-purple">Articles</a></li>
+                <li class="nav__item"><a href="/galerie" class="nav__link nav__link-purple">Galerie</a></li>
+                <li class="nav__item"><a href="/studio-JK" class="nav__link nav__link-purple">Le studio JK</a></li>
+                <li class="nav__item"><a href="/#boite-a-idees" class="nav__link nav__link-purple">Boite à idées</a></li>
+                <li class="nav__item nav__item-purple"><a href="/contact" class="nav__link nav__link-purple">Nous contacter</a></li>
+            </ul>
+            <div class="nav__burger">
+                <div class="nav__burger__line line-1"></div>
+                <div class="nav__burger__line line-2"></div>
+                <div class="nav__burger__line line-3"></div>
+            </div>
+        </div>
+            <div class="article__main">
+                figure(class="article__item")
+                    img(src=`${article.photo_big}` srcset=`${article.photo_big} 1x, ${article.photo_big_2x} 2x` alt="Image article 1" class="img")
+                <div class="article__content">
+                    p(class="article__title")=`${article.titre}`
+                    <div class="article__infos">
+                        p(class="article__author")= `par ${article.auteur}`
+                        p(class="article__date")= `${article.date}`
+                    </div>
+                    p(class="article__text" style="white-space: pre-line")= `${article.contenu}`
+                </div>
+            </div>
+
+        <footer class="footer">
+            <ul class="footer__nav">
+                <li class="footer__nav__item"><a href="/le-collectif" class="footer__nav__link">Le collectif</a></li>
+                <li class="footer__nav__item"><a href="/evenements" class="footer__nav__link">Evènements</a></li>
+                <li class="footer__nav__item"><a href="/articles" class="footer__nav__link">Articles</a></li>
+                <li class="footer__nav__item"><a href="/galerie" class="footer__nav__link">Galerie</a></li>
+                <li class="footer__nav__item"><a href="/studio-JK" class="footer__nav__link">Le studio JK</a></li>
+                <li class="footer__nav__item"><a href="/#boite-a-idees" class="footer__nav__link">Boite à idées</a></li>
+                <li class="footer__nav__item"><a href="/contact" class="footer__nav__link">Nous contacter</a></li>
+            </ul>
+                <ul class="footer__icons">
+                    <li class="footer__icons-item">
+                        <a href="#">
+                            <svg class="footer__svg">
+                                <use xlink:href="/img/sprite.svg#icon-facebook2"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__icons-item">
+                        <a href="#">
+                            <svg class="footer__svg">
+                                <use xlink:href="/img/sprite.svg#icon-instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__icons-item">
+                        <a href="#">
+                            <svg class="footer__svg">
+                                <use xlink:href="/img/sprite.svg#icon-twitch"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <p class="footer__email">contact@collectifregina.fr</p>
+                <div class="footer__line"></div>
+        <p class="footer__copyright">&copy; 2021 Collectif Regina - Blue studio.</p>
+        </footer>
+    </body>
+</html>

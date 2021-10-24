@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        title Panel d'administration
+        link(rel="stylesheet", href="/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/css/style.css")
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="/js/manage.js" defer)
+    body
+        block content
+        div(class="manage__container")
+            h1(class="manage__title") #{title}
+            p(class="manage__text") Choisissez une photo à modifier :
+
+            div(class="manage__content")
+                each photo in photos
+                    div(class="manage__row")
+                        img(src=`${photo.lien}`)
+                        a(class="manage__btn-edit" href=`/manage/galerie/edit/${photo.id}`) Éditer
+                        a(class="manage__btn-delete photo-delete" href='/manage/galerie' data-photo-id=`${photo.id}`) Supprimer
+
+                a(class="manage__btn-new" href='/manage/galerie/add') Ajouter une photo
+
+            div(class="manage__menu")
+                a(href="/" class="btn manage__btn") Accueil
+                a(href="/manage" class="btn manage__btn") Retour
